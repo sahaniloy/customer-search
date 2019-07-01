@@ -6,7 +6,7 @@ The following guides illustrate how to use this API:
 * This generic search engine will generate the SQL where clause dynamically based on the input parameter.
 * It will be helpful when there are lots of search criteria to search an object
 * It reduces the NULL checking of the input parameter to build the query with 'where' clause
-* GET URL to access the search API [http://localhost:8080/api/v1/customer?fname=sam&lname=preston&phone=1111&email=sam@gmail.com](http://localhost:8080/api/v1/customer?fname=sam&lname=preston&phone=1111&email=sam@gmail.com)
+* GET URL to access the search API [http://localhost:8080/api/v1/customer?fname=sam&lname=yan&phone=1111&email=sam@gmail.com](http://localhost:8080/api/v1/customer?fname=sam&lname=yan&phone=1111&email=sam@gmail.com)
 * To access in memory H2 DB click [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
   ![Screenshot](H2_login_screen.JPG)
   
@@ -24,9 +24,9 @@ If the attribute type is '**String**' then it can generate a SQL as **like** sea
 For string parameter you can also generate a SQL with **=** operator
 9. To enable this intelligence all you need to do is configure the API
 10. Sample output of the generated SQL by the search engine as below    
-    -   `Generated SQL ::: UPPER(customer.fname) like '%SAM%' AND UPPER(customer.lname) like '%PRESTON%' AND customer.email='sam@gmail.com' AND customer.phone=1111`
+    -   `Generated SQL ::: UPPER(customer.fname) like '%SAM%' AND UPPER(customer.lname) like '%YAN%' AND customer.email='sam@gmail.com' AND customer.phone=1111`
 11. Once the where clause is generated then you can append this clause with your desired SQL to build the full SQL and trigger that in DB, like below
-    - `select * from customer where UPPER(customer.fname) like '%SAM%' AND UPPER(customer.lname) like '%PRESTON%' AND customer.email='sam@gmail.com' AND customer.phone=1111`
+    - `select * from customer where UPPER(customer.fname) like '%SAM%' AND UPPER(customer.lname) like '%YAN%' AND customer.email='sam@gmail.com' AND customer.phone=1111`
 
 
 
