@@ -23,3 +23,11 @@ The following guides illustrate how to use this API:
 If the attribute type is '**String**' then it can generate a SQL as **like** search query e.g. **LIKE %SAM%**
 For string parameter you can also generate a SQL with **=** operator
 9. To enable this intelligence all you need to do is configure the API
+10. Sample output of the generated SQL by the search engine as below    
+    -   `Generated SQL ::: UPPER(customer.fname) like '%SAM%' AND UPPER(customer.lname) like '%PRESTON%' AND customer.email='sam@gmail.com' AND customer.phone=1111`
+11. Once the where clause is generated then you can append this clause with your desired SQL to build the full SQL and trigger that in DB, like below
+    - `select * from customer where UPPER(customer.fname) like '%SAM%' AND UPPER(customer.lname) like '%PRESTON%' AND customer.email='sam@gmail.com' AND customer.phone=1111`
+
+
+
+
